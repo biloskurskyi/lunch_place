@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Header */
+
+.header {
+    height: 140px;
+    background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Змінимо відступи для кращого вирівнювання */
+}
+
+.version {
+    font-size: 0.45em;
+    margin-left: 0.1em;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.list a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: 400;
+}
+
+.list li {
+    list-style: none;
+    margin-right: 10px;
+    padding: 10px 20px; /* Змініть розміри padding, щоб зробити кнопки більшими */
+    /* width: 140px; */ /* Якщо потрібна фіксована ширина, розкоментуйте цей рядок */
+    /* outline: 1px red solid; */
+    /* margin-top: 5%; */
+    box-shadow: 10px 10px 10px grey;
+    font-family: monospace;
+    border-radius: 100px;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+
+/* Ваші інші стилі */
+
+.list_restaurants {
+    display: block; /* Змінено на block, щоб кнопки відображалися як колонка */
+}
+
+.list_restaurants li {
+    list-style: none;
+    margin-right: 10px;
+    padding: 5px 10px;
+    box-shadow: 10px 10px 10px grey;
+    font-family: monospace;
+    border-radius: 100px;
+    text-align: center;
+    transition-duration: 0.5s;
+    margin-bottom: 10px;
+}
+
+.list_restaurants li a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: 400;
+    display: block; /* Видаляємо лінію посилання */
+}
+
+/* Ваші інші стилі */
+
+
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    font-size: 24px;
+}
+
+
+.list li:hover {
+    box-shadow: 4px 5px 50px grey;
+}
+
+/* Wrapper */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set the minimum height to the viewport height */
+}
+
+/* Content */
+
+.content {
+    width: 60%;
+    margin: 100px auto 0;
+    flex: 1 0 auto;
+}
+
+/*Footer*/
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    font-family: monospace;
+    padding-top: 30px;
+    flex: 0 0 auto;
+}
+

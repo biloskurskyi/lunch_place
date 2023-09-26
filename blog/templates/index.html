@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% block main_page %}
+{% if not current_user.is_authenticated %}
+<h2>Authorize for further work.</h2>
+{% else %}
+  <h2>Welcome, {{ current_user.username }}!</h2>
+{% endif %}
+{% endblock main_page %}

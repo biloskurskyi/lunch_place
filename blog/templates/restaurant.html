@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Restaurant: {{ title }}</h1>
+{% if menu_items %}
+<ul>
+    {% for menu_item in menu_items %}
+    <li>
+        {{ menu_item.name }} - ${{ menu_item.price }}
+        {% if current_user.is_authenticated %}
+        {% if not menu_item.ordered_by_user(current_user) %}
+        <form method="POST" action="{{ url_for('main.order_menu_item', menu_item_id=menu_item.id) }}">
+            <input type="submit" value="Order">
+        </form>
+        {% else %}
+        <form method="POST" action="{{ url_for('main.order_menu_item', menu_item_id=menu_item.id) }}">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Cancel order">
+        </form>
+        <span class="checkmark">&#10003;</span>
+        {% endif %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No menu available for this restaurant.</p>
+{% endif %}
+{% endblock content %}
